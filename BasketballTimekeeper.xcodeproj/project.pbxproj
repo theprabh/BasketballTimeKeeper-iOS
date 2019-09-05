@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6A1784D3230F452B007B05CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1784D2230F452B007B05CE /* AppDelegate.swift */; };
+		6A1784D5230F452B007B05CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1784D4230F452B007B05CE /* ViewController.swift */; };
+		6A1784D8230F452B007B05CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1784D6230F452B007B05CE /* Main.storyboard */; };
+		6A1784DA230F452E007B05CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A1784D9230F452E007B05CE /* Assets.xcassets */; };
+		6A1784DD230F452E007B05CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1784DB230F452E007B05CE /* LaunchScreen.storyboard */; };
+		6ACBC92E230FACE100C05BCC /* buzzer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6ACBC92D230FACE100C05BCC /* buzzer.wav */; };
+		7C24FCD6081CB5D4BF3D6060 /* Pods_BasketballTimekeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A8D5D17223F07368D675EE /* Pods_BasketballTimekeeper.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0F2883CD12EE5A79C254AF62 /* Pods-BasketballTimekeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasketballTimekeeper.release.xcconfig"; path = "Target Support Files/Pods-BasketballTimekeeper/Pods-BasketballTimekeeper.release.xcconfig"; sourceTree = "<group>"; };
+		62A8D5D17223F07368D675EE /* Pods_BasketballTimekeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BasketballTimekeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A1784CF230F452B007B05CE /* BasketballTimekeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasketballTimekeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A1784D2230F452B007B05CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6A1784D4230F452B007B05CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6A1784D7230F452B007B05CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6A1784D9230F452E007B05CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A1784DC230F452E007B05CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6A1784DE230F452E007B05CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ACBC92D230FACE100C05BCC /* buzzer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buzzer.wav; sourceTree = "<group>"; };
+		84C2B35B402F2407B1F8A12D /* Pods-BasketballTimekeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasketballTimekeeper.debug.xcconfig"; path = "Target Support Files/Pods-BasketballTimekeeper/Pods-BasketballTimekeeper.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6A1784CC230F452B007B05CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C24FCD6081CB5D4BF3D6060 /* Pods_BasketballTimekeeper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E25CB93D28AE35A1817ADC4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84C2B35B402F2407B1F8A12D /* Pods-BasketballTimekeeper.debug.xcconfig */,
+				0F2883CD12EE5A79C254AF62 /* Pods-BasketballTimekeeper.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		1195ED3E82A003CBC478C79A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62A8D5D17223F07368D675EE /* Pods_BasketballTimekeeper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A1784C6230F452B007B05CE = {
+			isa = PBXGroup;
+			children = (
+				6ACBC92C230FACE100C05BCC /* sound_effects */,
+				6A1784D1230F452B007B05CE /* BasketballTimekeeper */,
+				6A1784D0230F452B007B05CE /* Products */,
+				0E25CB93D28AE35A1817ADC4 /* Pods */,
+				1195ED3E82A003CBC478C79A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6A1784D0230F452B007B05CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A1784CF230F452B007B05CE /* BasketballTimekeeper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6A1784D1230F452B007B05CE /* BasketballTimekeeper */ = {
+			isa = PBXGroup;
+			children = (
+				6A1784D2230F452B007B05CE /* AppDelegate.swift */,
+				6A1784D4230F452B007B05CE /* ViewController.swift */,
+				6A1784D6230F452B007B05CE /* Main.storyboard */,
+				6A1784D9230F452E007B05CE /* Assets.xcassets */,
+				6A1784DB230F452E007B05CE /* LaunchScreen.storyboard */,
+				6A1784DE230F452E007B05CE /* Info.plist */,
+			);
+			path = BasketballTimekeeper;
+			sourceTree = "<group>";
+		};
+		6ACBC92C230FACE100C05BCC /* sound_effects */ = {
+			isa = PBXGroup;
+			children = (
+				6ACBC92D230FACE100C05BCC /* buzzer.wav */,
+			);
+			path = sound_effects;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A1784CE230F452B007B05CE /* BasketballTimekeeper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A1784E1230F452E007B05CE /* Build configuration list for PBXNativeTarget "BasketballTimekeeper" */;
+			buildPhases = (
+				F768EDCBF8B21F8641525883 /* [CP] Check Pods Manifest.lock */,
+				6A1784CB230F452B007B05CE /* Sources */,
+				6A1784CC230F452B007B05CE /* Frameworks */,
+				6A1784CD230F452B007B05CE /* Resources */,
+				FB740D60FF3E1D29C8FACEFC /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BasketballTimekeeper;
+			productName = BasketballTimekeeper;
+			productReference = 6A1784CF230F452B007B05CE /* BasketballTimekeeper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6A1784C7230F452B007B05CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Prabhjot S. Mattu";
+				TargetAttributes = {
+					6A1784CE230F452B007B05CE = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = 6A1784CA230F452B007B05CE /* Build configuration list for PBXProject "BasketballTimekeeper" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6A1784C6230F452B007B05CE;
+			productRefGroup = 6A1784D0230F452B007B05CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6A1784CE230F452B007B05CE /* BasketballTimekeeper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A1784CD230F452B007B05CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ACBC92E230FACE100C05BCC /* buzzer.wav in Resources */,
+				6A1784DD230F452E007B05CE /* LaunchScreen.storyboard in Resources */,
+				6A1784DA230F452E007B05CE /* Assets.xcassets in Resources */,
+				6A1784D8230F452B007B05CE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F768EDCBF8B21F8641525883 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BasketballTimekeeper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB740D60FF3E1D29C8FACEFC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BasketballTimekeeper/Pods-BasketballTimekeeper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BasketballTimekeeper/Pods-BasketballTimekeeper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BasketballTimekeeper/Pods-BasketballTimekeeper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A1784CB230F452B007B05CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A1784D5230F452B007B05CE /* ViewController.swift in Sources */,
+				6A1784D3230F452B007B05CE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6A1784D6230F452B007B05CE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A1784D7230F452B007B05CE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6A1784DB230F452E007B05CE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A1784DC230F452E007B05CE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6A1784DF230F452E007B05CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6A1784E0230F452E007B05CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6A1784E2230F452E007B05CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84C2B35B402F2407B1F8A12D /* Pods-BasketballTimekeeper.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9R6URK3QTL;
+				INFOPLIST_FILE = BasketballTimekeeper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.theprabh.BasketballTimekeeper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6A1784E3230F452E007B05CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F2883CD12EE5A79C254AF62 /* Pods-BasketballTimekeeper.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9R6URK3QTL;
+				INFOPLIST_FILE = BasketballTimekeeper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.theprabh.BasketballTimekeeper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A1784CA230F452B007B05CE /* Build configuration list for PBXProject "BasketballTimekeeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A1784DF230F452E007B05CE /* Debug */,
+				6A1784E0230F452E007B05CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A1784E1230F452E007B05CE /* Build configuration list for PBXNativeTarget "BasketballTimekeeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A1784E2230F452E007B05CE /* Debug */,
+				6A1784E3230F452E007B05CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6A1784C7230F452B007B05CE /* Project object */;
+}
