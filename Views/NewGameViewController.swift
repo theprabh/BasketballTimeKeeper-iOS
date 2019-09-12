@@ -10,8 +10,15 @@ import UIKit
 
 class NewGameViewController: UITableViewController {
 
+    @IBOutlet weak var dateLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "NewGameItem")
+        
+        let currentDate = Date()
+        let dateString = DateFormatter.localizedString(from: currentDate, dateStyle: .full, timeStyle: .none)
+        dateLabel.text = dateString
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -22,6 +29,9 @@ class NewGameViewController: UITableViewController {
 
     // MARK: - Table view data source
     
+    
+    
+ 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell: UITableViewCell = tableView.cellForRow(at: indexPath) {
             switch cell.tag {
@@ -32,10 +42,17 @@ class NewGameViewController: UITableViewController {
                 print("buy")
                 break
             }
-            
         }
-        
     }
+    
+ 
+    /*
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell: UITableViewCell = tableView.cellForRow(at: indexPath) {
+            cell.contentView.backgroundColor = UIColor.init(red: 38, green: 38, blue: 38, alpha: 0)
+        }
+    }
+    */
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

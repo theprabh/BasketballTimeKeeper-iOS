@@ -97,21 +97,23 @@
                         <sections>
                             <tableViewSection headerTitle="Teams" id="5Pq-sm-GFF">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" id="q8X-Z4-ArL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NewGameItem" id="q8X-Z4-ArL">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q8X-Z4-ArL" id="mJF-CA-9XF">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" id="DLt-Og-fNx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NewGameItem" id="DLt-Og-fNx">
                                         <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DLt-Og-fNx" id="NAj-tR-cBf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
@@ -119,33 +121,63 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Date" id="qWS-bQ-x3J">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" id="XEz-67-oqq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewGameItem" id="XEz-67-oqq">
                                         <rect key="frame" x="0.0" y="199.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XEz-67-oqq" id="Az7-g7-tcy">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uac-wl-N85">
+                                                    <rect key="frame" x="25" y="11.5" width="36" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="uac-wl-N85" firstAttribute="centerY" secondItem="Az7-g7-tcy" secondAttribute="centerY" id="HCW-gZ-Msd"/>
+                                                <constraint firstItem="uac-wl-N85" firstAttribute="leading" secondItem="Az7-g7-tcy" secondAttribute="leadingMargin" constant="5" id="feg-3I-MWg"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.12156862745098039" green="0.12941176470588234" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Period" id="fXj-35-aRD">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" id="yF8-dN-cqu">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewGameItem" id="yF8-dN-cqu">
                                         <rect key="frame" x="0.0" y="299.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yF8-dN-cqu" id="Nft-Be-iZH">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="J5h-eE-dNh">
+                                                    <rect key="frame" x="20" y="10" width="137" height="24.5"/>
+                                                    <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <segments>
+                                                        <segment title="Halves"/>
+                                                        <segment title="Quarters"/>
+                                                    </segments>
+                                                    <color key="tintColor" red="0.18429392580000001" green="0.18432641029999999" blue="0.18428686259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </segmentedControl>
+                                            </subviews>
                                             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="J5h-eE-dNh" firstAttribute="top" secondItem="Nft-Be-iZH" secondAttribute="top" constant="10" id="7oB-tW-eaO"/>
+                                                <constraint firstItem="J5h-eE-dNh" firstAttribute="leading" secondItem="Nft-Be-iZH" secondAttribute="leading" constant="20" id="UNI-Ng-qUc"/>
+                                                <constraint firstAttribute="bottom" secondItem="J5h-eE-dNh" secondAttribute="bottom" constant="10" id="Ude-wB-sn1"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.12156862745098039" green="0.12941176470588234" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Period Length" id="dxe-Bt-BYx">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" tag="4" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" id="n5d-KB-zl4">
+                                    <tableViewCell clipsSubviews="YES" tag="4" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NewGameItem" id="n5d-KB-zl4">
                                         <rect key="frame" x="0.0" y="399.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n5d-KB-zl4" id="xzr-lQ-pfc">
@@ -166,6 +198,12 @@
                             <outlet property="delegate" destination="ryL-nz-RkA" id="dyL-Pw-yp9"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="New Game" id="Fza-Dd-vKW">
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="9zO-y9-f3s"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dateLabel" destination="uac-wl-N85" id="9uK-tx-Czv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCU-9B-R6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,7 +212,6 @@
         <!--Period Length Navigation Controller-->
         <scene sceneID="khu-6b-5ud">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mGf-ZI-Kwa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="DaT-5O-998" userLabel="Period Length Navigation Controller" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="Ncc-hC-u2x">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -188,6 +225,7 @@
                         <segue destination="pEH-nj-rQd" kind="relationship" relationship="rootViewController" id="3xe-fu-viH"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mGf-ZI-Kwa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1752" y="131"/>
         </scene>
@@ -198,14 +236,31 @@
                     <view key="view" contentMode="scaleToFill" id="ARU-Hx-83Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKq-6t-g0C">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KKq-6t-g0C" firstAttribute="leading" secondItem="SZR-hU-6Ub" secondAttribute="leading" id="WOJ-jK-65c"/>
+                            <constraint firstItem="KKq-6t-g0C" firstAttribute="top" secondItem="SZR-hU-6Ub" secondAttribute="top" id="mzm-Z5-vtk"/>
+                            <constraint firstItem="KKq-6t-g0C" firstAttribute="trailing" secondItem="SZR-hU-6Ub" secondAttribute="trailing" id="sFm-A4-jA5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SZR-hU-6Ub"/>
                     </view>
                     <navigationItem key="navigationItem" title="Period Length" id="a0P-PZ-nLb">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="WrS-o7-of8"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="WrS-o7-of8">
+                            <connections>
+                                <action selector="cancel:" destination="pEH-nj-rQd" id="gi6-ed-iMc"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="rhB-2J-BAk"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="periodPicker" destination="KKq-6t-g0C" id="eLE-nF-QVb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vw8-xf-rSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
