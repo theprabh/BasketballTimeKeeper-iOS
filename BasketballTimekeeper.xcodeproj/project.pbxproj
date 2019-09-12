@@ -9,9 +9,13 @@
 /* Begin PBXBuildFile section */
 		6A1784D3230F452B007B05CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1784D2230F452B007B05CE /* AppDelegate.swift */; };
 		6A1784D5230F452B007B05CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1784D4230F452B007B05CE /* ViewController.swift */; };
-		6A1784D8230F452B007B05CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1784D6230F452B007B05CE /* Main.storyboard */; };
+		6A1784D8230F452B007B05CE /* Old.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1784D6230F452B007B05CE /* Old.storyboard */; };
 		6A1784DA230F452E007B05CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A1784D9230F452E007B05CE /* Assets.xcassets */; };
 		6A1784DD230F452E007B05CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1784DB230F452E007B05CE /* LaunchScreen.storyboard */; };
+		6AAC449C2329ED3F00DCE810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AAC449B2329ED3F00DCE810 /* Main.storyboard */; };
+		6AAC449E2329F23700DCE810 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AAC449D2329F23700DCE810 /* logo.png */; };
+		6AAC44A1232A04F300DCE810 /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAC44A0232A04F300DCE810 /* NewGameViewController.swift */; };
+		6AAC44A3232A11EA00DCE810 /* PeriodLengthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAC44A2232A11EA00DCE810 /* PeriodLengthViewController.swift */; };
 		6ACBC92E230FACE100C05BCC /* buzzer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6ACBC92D230FACE100C05BCC /* buzzer.wav */; };
 		7C24FCD6081CB5D4BF3D6060 /* Pods_BasketballTimekeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A8D5D17223F07368D675EE /* Pods_BasketballTimekeeper.framework */; };
 /* End PBXBuildFile section */
@@ -22,10 +26,14 @@
 		6A1784CF230F452B007B05CE /* BasketballTimekeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasketballTimekeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A1784D2230F452B007B05CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A1784D4230F452B007B05CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6A1784D7230F452B007B05CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6A1784D7230F452B007B05CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Old.storyboard; sourceTree = "<group>"; };
 		6A1784D9230F452E007B05CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A1784DC230F452E007B05CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A1784DE230F452E007B05CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AAC449B2329ED3F00DCE810 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6AAC449D2329F23700DCE810 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		6AAC44A0232A04F300DCE810 /* NewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameViewController.swift; sourceTree = "<group>"; };
+		6AAC44A2232A11EA00DCE810 /* PeriodLengthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodLengthViewController.swift; sourceTree = "<group>"; };
 		6ACBC92D230FACE100C05BCC /* buzzer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buzzer.wav; sourceTree = "<group>"; };
 		84C2B35B402F2407B1F8A12D /* Pods-BasketballTimekeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasketballTimekeeper.debug.xcconfig"; path = "Target Support Files/Pods-BasketballTimekeeper/Pods-BasketballTimekeeper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +70,8 @@
 		6A1784C6230F452B007B05CE = {
 			isa = PBXGroup;
 			children = (
+				6AAC449F232A04D700DCE810 /* Views */,
+				6AAC449D2329F23700DCE810 /* logo.png */,
 				6ACBC92C230FACE100C05BCC /* sound_effects */,
 				6A1784D1230F452B007B05CE /* BasketballTimekeeper */,
 				6A1784D0230F452B007B05CE /* Products */,
@@ -83,12 +93,22 @@
 			children = (
 				6A1784D2230F452B007B05CE /* AppDelegate.swift */,
 				6A1784D4230F452B007B05CE /* ViewController.swift */,
-				6A1784D6230F452B007B05CE /* Main.storyboard */,
+				6A1784D6230F452B007B05CE /* Old.storyboard */,
 				6A1784D9230F452E007B05CE /* Assets.xcassets */,
 				6A1784DB230F452E007B05CE /* LaunchScreen.storyboard */,
 				6A1784DE230F452E007B05CE /* Info.plist */,
+				6AAC449B2329ED3F00DCE810 /* Main.storyboard */,
 			);
 			path = BasketballTimekeeper;
+			sourceTree = "<group>";
+		};
+		6AAC449F232A04D700DCE810 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6AAC44A0232A04F300DCE810 /* NewGameViewController.swift */,
+				6AAC44A2232A11EA00DCE810 /* PeriodLengthViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		6ACBC92C230FACE100C05BCC /* sound_effects */ = {
@@ -161,8 +181,10 @@
 			files = (
 				6ACBC92E230FACE100C05BCC /* buzzer.wav in Resources */,
 				6A1784DD230F452E007B05CE /* LaunchScreen.storyboard in Resources */,
+				6AAC449E2329F23700DCE810 /* logo.png in Resources */,
 				6A1784DA230F452E007B05CE /* Assets.xcassets in Resources */,
-				6A1784D8230F452B007B05CE /* Main.storyboard in Resources */,
+				6AAC449C2329ED3F00DCE810 /* Main.storyboard in Resources */,
+				6A1784D8230F452B007B05CE /* Old.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,18 +239,20 @@
 			files = (
 				6A1784D5230F452B007B05CE /* ViewController.swift in Sources */,
 				6A1784D3230F452B007B05CE /* AppDelegate.swift in Sources */,
+				6AAC44A3232A11EA00DCE810 /* PeriodLengthViewController.swift in Sources */,
+				6AAC44A1232A04F300DCE810 /* NewGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6A1784D6230F452B007B05CE /* Main.storyboard */ = {
+		6A1784D6230F452B007B05CE /* Old.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6A1784D7230F452B007B05CE /* Base */,
 			);
-			name = Main.storyboard;
+			name = Old.storyboard;
 			sourceTree = "<group>";
 		};
 		6A1784DB230F452E007B05CE /* LaunchScreen.storyboard */ = {
