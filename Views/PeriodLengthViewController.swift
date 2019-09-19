@@ -8,9 +8,16 @@
 
 import UIKit
 
+protocol PeriodLengthViewControllerDelegate: class {
+    func periodLengthViewControllerDidCancel(_ controller: PeriodLengthViewController)
+    func periodLengthViewController(_ controller: PeriodLengthViewController, didFinishSelecting newLength: Int)
+}
+
 class PeriodLengthViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var periodPicker: UIPickerView!
     var pickerData: [String] = []
+    weak var delegate: PeriodLengthViewControllerDelegate?
+    var previousLength: Int = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,28 +27,25 @@ class PeriodLengthViewController: UIViewController, UIPickerViewDataSource, UIPi
         self.periodPicker.dataSource = self
         
         for i in 1 ... 20{
-            pickerData.append("\(i) min")
+            pickerData.append("\(i) minutes")
         }
+        
+        periodPicker.selectRow(previousLength - 1, inComponent: 0, animated: true)
+        
         
     }
     
-    @IBAction func cancel(_ sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func cancel() {
+        delegate?.periodLengthViewControllerDidCancel(self)
+    }
+    
+    @IBAction func done() {
+        let currentLength = periodPicker.selectedRow(inComponent: 0) + 1
+        delegate?.periodLengthViewController(self, didFinishSelecting: currentLength)
     }
     
 
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     // MARK: - PickerView
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

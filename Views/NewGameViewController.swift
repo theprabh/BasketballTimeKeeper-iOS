@@ -8,9 +8,23 @@
 
 import UIKit
 
-class NewGameViewController: UITableViewController {
+class NewGameViewController: UITableViewController, PeriodLengthViewControllerDelegate{
+    
+    // MARK: - Period Length Delegates
+    func periodLengthViewControllerDidCancel(_ controller: PeriodLengthViewController) {
+        print("cancel")
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func periodLengthViewController(_ controller: PeriodLengthViewController, didFinishSelecting newLength: Int) {
+        length = newLength
+        lengthLabel.text = "\(newLength) minutes"
+        dismiss(animated: true, completion: nil)
+    }
 
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var lengthLabel: UILabel!
+    var length = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +43,7 @@ class NewGameViewController: UITableViewController {
 
     // MARK: - Table view data source
     
-    
-    
- 
+    /*
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell: UITableViewCell = tableView.cellForRow(at: indexPath) {
             switch cell.tag {
@@ -44,6 +56,8 @@ class NewGameViewController: UITableViewController {
             }
         }
     }
+    */
+
     
  
     /*
@@ -99,14 +113,16 @@ class NewGameViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "SelectPeriodLength" {
+            let nav = segue.destination as! UINavigationController
+            let controller = nav.topViewController as! PeriodLengthViewController
+            controller.delegate = self
+            controller.previousLength = length
+        }
     }
-    */
+ 
 
 }

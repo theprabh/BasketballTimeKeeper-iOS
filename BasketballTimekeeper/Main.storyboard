@@ -156,7 +156,7 @@
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="J5h-eE-dNh">
                                                     <rect key="frame" x="20" y="10" width="137" height="24.5"/>
-                                                    <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="1" green="0.60149651765823364" blue="0.07637421041727066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <segments>
                                                         <segment title="Halves"/>
                                                         <segment title="Quarters"/>
@@ -183,11 +183,23 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n5d-KB-zl4" id="xzr-lQ-pfc">
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="861-Jb-aeQ">
+                                                    <rect key="frame" x="25" y="11.5" width="85.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="861-Jb-aeQ" firstAttribute="centerY" secondItem="xzr-lQ-pfc" secondAttribute="centerY" id="LT3-rH-evo"/>
+                                                <constraint firstItem="861-Jb-aeQ" firstAttribute="leading" secondItem="xzr-lQ-pfc" secondAttribute="leadingMargin" constant="5" id="fj2-up-ARY"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <segue destination="DaT-5O-998" kind="presentation" id="ZmQ-8y-3Ug"/>
+                                            <segue destination="DaT-5O-998" kind="presentation" identifier="SelectPeriodLength" id="ZmQ-8y-3Ug"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -203,11 +215,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="uac-wl-N85" id="9uK-tx-Czv"/>
+                        <outlet property="lengthLabel" destination="861-Jb-aeQ" id="rkF-kQ-zRI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCU-9B-R6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="-179"/>
+            <point key="canvasLocation" x="773.91304347826087" y="-1100.2232142857142"/>
         </scene>
         <!--Period Length Navigation Controller-->
         <scene sceneID="khu-6b-5ud">
@@ -227,7 +240,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGf-ZI-Kwa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1752" y="131"/>
+            <point key="canvasLocation" x="1619" y="-652"/>
         </scene>
         <!--Period Length-->
         <scene sceneID="t8f-86-H50">
@@ -253,10 +266,14 @@
                     <navigationItem key="navigationItem" title="Period Length" id="a0P-PZ-nLb">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="WrS-o7-of8">
                             <connections>
-                                <action selector="cancel:" destination="pEH-nj-rQd" id="gi6-ed-iMc"/>
+                                <action selector="cancel" destination="pEH-nj-rQd" id="wNe-8Q-iVK"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="rhB-2J-BAk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="rhB-2J-BAk">
+                            <connections>
+                                <action selector="done" destination="pEH-nj-rQd" id="iCO-1p-grY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="periodPicker" destination="KKq-6t-g0C" id="eLE-nF-QVb"/>
@@ -264,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vw8-xf-rSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2570" y="142"/>
+            <point key="canvasLocation" x="2413" y="-652"/>
         </scene>
     </scenes>
     <resources>
