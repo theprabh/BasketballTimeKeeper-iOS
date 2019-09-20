@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A0C4E7C2334566F0023EAE2 /* iTunesArtwork@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A0C4E7A2334566F0023EAE2 /* iTunesArtwork@1x.png */; };
+		6A0C4E7D2334566F0023EAE2 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A0C4E7B2334566F0023EAE2 /* iTunesArtwork@2x.png */; };
+		6A0C4E83233465CD0023EAE2 /* start_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A0C4E82233465CD0023EAE2 /* start_icon.png */; };
+		6A0C4E852334661C0023EAE2 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A0C4E842334661C0023EAE2 /* launch.png */; };
 		6A1784D3230F452B007B05CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1784D2230F452B007B05CE /* AppDelegate.swift */; };
 		6A1784D5230F452B007B05CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1784D4230F452B007B05CE /* ViewController.swift */; };
 		6A1784D8230F452B007B05CE /* Old.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1784D6230F452B007B05CE /* Old.storyboard */; };
 		6A1784DA230F452E007B05CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A1784D9230F452E007B05CE /* Assets.xcassets */; };
 		6A1784DD230F452E007B05CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1784DB230F452E007B05CE /* LaunchScreen.storyboard */; };
 		6AAC449C2329ED3F00DCE810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AAC449B2329ED3F00DCE810 /* Main.storyboard */; };
-		6AAC449E2329F23700DCE810 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AAC449D2329F23700DCE810 /* logo.png */; };
 		6AAC44A1232A04F300DCE810 /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAC44A0232A04F300DCE810 /* NewGameViewController.swift */; };
 		6AAC44A3232A11EA00DCE810 /* PeriodLengthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAC44A2232A11EA00DCE810 /* PeriodLengthViewController.swift */; };
 		6ACBC92E230FACE100C05BCC /* buzzer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6ACBC92D230FACE100C05BCC /* buzzer.wav */; };
@@ -23,6 +26,10 @@
 /* Begin PBXFileReference section */
 		0F2883CD12EE5A79C254AF62 /* Pods-BasketballTimekeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasketballTimekeeper.release.xcconfig"; path = "Target Support Files/Pods-BasketballTimekeeper/Pods-BasketballTimekeeper.release.xcconfig"; sourceTree = "<group>"; };
 		62A8D5D17223F07368D675EE /* Pods_BasketballTimekeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BasketballTimekeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A0C4E7A2334566F0023EAE2 /* iTunesArtwork@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@1x.png"; sourceTree = "<group>"; };
+		6A0C4E7B2334566F0023EAE2 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		6A0C4E82233465CD0023EAE2 /* start_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_icon.png; sourceTree = "<group>"; };
+		6A0C4E842334661C0023EAE2 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
 		6A1784CF230F452B007B05CE /* BasketballTimekeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasketballTimekeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A1784D2230F452B007B05CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A1784D4230F452B007B05CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,7 +38,6 @@
 		6A1784DC230F452E007B05CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A1784DE230F452E007B05CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AAC449B2329ED3F00DCE810 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		6AAC449D2329F23700DCE810 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		6AAC44A0232A04F300DCE810 /* NewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameViewController.swift; sourceTree = "<group>"; };
 		6AAC44A2232A11EA00DCE810 /* PeriodLengthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodLengthViewController.swift; sourceTree = "<group>"; };
 		6ACBC92D230FACE100C05BCC /* buzzer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buzzer.wav; sourceTree = "<group>"; };
@@ -67,11 +73,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6A0C4E792334566F0023EAE2 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				6A0C4E842334661C0023EAE2 /* launch.png */,
+				6A0C4E82233465CD0023EAE2 /* start_icon.png */,
+				6A0C4E7A2334566F0023EAE2 /* iTunesArtwork@1x.png */,
+				6A0C4E7B2334566F0023EAE2 /* iTunesArtwork@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		6A1784C6230F452B007B05CE = {
 			isa = PBXGroup;
 			children = (
+				6A0C4E792334566F0023EAE2 /* images */,
 				6AAC449F232A04D700DCE810 /* Views */,
-				6AAC449D2329F23700DCE810 /* logo.png */,
 				6ACBC92C230FACE100C05BCC /* sound_effects */,
 				6A1784D1230F452B007B05CE /* BasketballTimekeeper */,
 				6A1784D0230F452B007B05CE /* Products */,
@@ -181,10 +198,13 @@
 			files = (
 				6ACBC92E230FACE100C05BCC /* buzzer.wav in Resources */,
 				6A1784DD230F452E007B05CE /* LaunchScreen.storyboard in Resources */,
-				6AAC449E2329F23700DCE810 /* logo.png in Resources */,
+				6A0C4E7D2334566F0023EAE2 /* iTunesArtwork@2x.png in Resources */,
+				6A0C4E852334661C0023EAE2 /* launch.png in Resources */,
 				6A1784DA230F452E007B05CE /* Assets.xcassets in Resources */,
 				6AAC449C2329ED3F00DCE810 /* Main.storyboard in Resources */,
+				6A0C4E7C2334566F0023EAE2 /* iTunesArtwork@1x.png in Resources */,
 				6A1784D8230F452B007B05CE /* Old.storyboard in Resources */,
+				6A0C4E83233465CD0023EAE2 /* start_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

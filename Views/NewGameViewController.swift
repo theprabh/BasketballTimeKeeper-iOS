@@ -11,6 +11,7 @@ import UIKit
 class NewGameViewController: UITableViewController, PeriodLengthViewControllerDelegate{
     
     // MARK: - Period Length Delegates
+    
     func periodLengthViewControllerDidCancel(_ controller: PeriodLengthViewController) {
         print("cancel")
         dismiss(animated: true, completion: nil)
@@ -43,8 +44,9 @@ class NewGameViewController: UITableViewController, PeriodLengthViewControllerDe
 
     // MARK: - Table view data source
     
-    /*
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         if let cell: UITableViewCell = tableView.cellForRow(at: indexPath) {
             switch cell.tag {
             case 4:
@@ -56,10 +58,7 @@ class NewGameViewController: UITableViewController, PeriodLengthViewControllerDe
             }
         }
     }
-    */
-
     
- 
     /*
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if let cell: UITableViewCell = tableView.cellForRow(at: indexPath) {
