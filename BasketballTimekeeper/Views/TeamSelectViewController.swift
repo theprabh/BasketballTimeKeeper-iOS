@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol TeamSelectViewControllerDelegate: class {
+    func teamSelectViewControllerDidCancel(_ controller: TeamSelectViewController)
+    func teamSelectViewController(_ controller: TeamSelectViewController, didFinishSelecting team: String)
+}
+
 class TeamSelectViewController: UITableViewController {
+    
+    let placeHolderString = "placeholder"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,14 +84,22 @@ class TeamSelectViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
+    @IBAction func cancel() {
+        //delegate?.teamSelectViewControllerDidCancel(self)
+    }
+    
+    @IBAction func done() {
+        
+    }
+     
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

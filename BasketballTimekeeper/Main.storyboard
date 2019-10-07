@@ -89,6 +89,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="V4z-hH-C3O" kind="presentation" identifier="SelectTeam1" id="hK6-ad-fTc"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NewGameItem" id="DLt-Og-fNx">
                                         <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
@@ -98,6 +101,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="V4z-hH-C3O" kind="presentation" identifier="SelectTeam2" trigger="accessoryAction" id="y40-Df-Vhd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -202,11 +208,60 @@
             </objects>
             <point key="canvasLocation" x="773.91304347826087" y="-1100.2232142857142"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="z2T-TX-5cS">
+            <objects>
+                <navigationController id="V4z-hH-C3O" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="GaN-Go-jKP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1Ma-cc-TUf" kind="relationship" relationship="rootViewController" id="aqv-Yo-o9U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Zk-mR-Vio" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1970" y="-1355"/>
+        </scene>
+        <!--Team Select View Controller-->
+        <scene sceneID="YuA-ws-IWw">
+            <objects>
+                <tableViewController id="1Ma-cc-TUf" customClass="TeamSelectViewController" customModule="BasketballTimekeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wdE-fe-Sf5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RQO-FQ-WhL">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RQO-FQ-WhL" id="TT2-f9-oQX">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1Ma-cc-TUf" id="SKB-pp-No7"/>
+                            <outlet property="delegate" destination="1Ma-cc-TUf" id="UeQ-ha-2Oi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="SKd-Td-PTY">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="mWN-tt-rJh"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="WaN-tz-VsD"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9GG-aH-12a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2838" y="-1355"/>
+        </scene>
         <!--Period Length Navigation Controller-->
         <scene sceneID="khu-6b-5ud">
             <objects>
                 <navigationController id="DaT-5O-998" userLabel="Period Length Navigation Controller" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="Ncc-hC-u2x">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Ncc-hC-u2x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -220,18 +275,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGf-ZI-Kwa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1619" y="-652"/>
+            <point key="canvasLocation" x="1970" y="-670"/>
         </scene>
         <!--Period Length-->
         <scene sceneID="t8f-86-H50">
             <objects>
                 <viewController id="pEH-nj-rQd" customClass="PeriodLengthViewController" customModule="BasketballTimekeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ARU-Hx-83Y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKq-6t-g0C">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="216"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -261,11 +316,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vw8-xf-rSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2413" y="-652"/>
+            <point key="canvasLocation" x="2838" y="-670"/>
         </scene>
     </scenes>
     <resources>
         <image name="start_icon.png" width="400" height="400"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="y40-Df-Vhd"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

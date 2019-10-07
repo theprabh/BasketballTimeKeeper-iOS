@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import RealmSwift
+
+class Team: Object {
+    let players = List<Player>
+    @objc dynamic var name = String()
+}
+
+class Player: Object {
+    @objc dynamic var name = String()
+    @objc dynamic var age = Int()
+}
+
+

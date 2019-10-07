@@ -7,3 +7,13 @@
 //
 
 import Foundation
+import RealmSwift
+
+class Game: Object {
+    let team1 = Team()
+    let team2 = Team()
+    @objc dynamic var date = String()
+    @objc dynamic var team1Score = Int()
+    @objc dynamic var team2Score = Int()
+    
+}
