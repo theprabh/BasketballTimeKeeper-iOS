@@ -9,11 +9,30 @@
 import Foundation
 import RealmSwift
 
+class GameManager: NSObject {
+
+    static let global = GameManager()
+    
+    let realm = try! Realm()
+    var games: Results<Game>
+    
+    private var currentGame: Game?
+    
+    var team1score = 0
+    
+    public override init() {
+        self.games = realm.objects(Game.self)
+        super.init()
+    }
+    
+}
+
 class Game: Object {
     let team1 = Team()
     let team2 = Team()
     @objc dynamic var date = String()
     @objc dynamic var team1Score = Int()
     @objc dynamic var team2Score = Int()
-    
 }
+
+

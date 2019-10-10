@@ -8,7 +8,18 @@
 
 import UIKit
 
-class NewGameViewController: UITableViewController, PeriodLengthViewControllerDelegate{
+protocol NewGameViewControllerDelegate: class {
+    func newGameViewController(_ controller: NewGameViewController, didFinishSelecting gameLength: Int)
+}
+
+class NewGameViewController: UITableViewController, PeriodLengthViewControllerDelegate, GameViewControllerDelegate {
+    
+    func gameViewControllerDidCancel(_ controller: GameViewController) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
     
     // MARK: - Period Length Delegates
     
@@ -22,7 +33,9 @@ class NewGameViewController: UITableViewController, PeriodLengthViewControllerDe
         lengthLabel.text = "\(newLength) minutes"
         dismiss(animated: true, completion: nil)
     }
-
+    
+    weak var delegate: NewGameViewControllerDelegate?
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var lengthLabel: UILabel!
     var length = 20
@@ -50,10 +63,10 @@ class NewGameViewController: UITableViewController, PeriodLengthViewControllerDe
         if let cell: UITableViewCell = tableView.cellForRow(at: indexPath) {
             switch cell.tag {
             case 4:
-                print("hello")
+                //print("hello")
                 break
             default:
-                print("buy")
+                //print("buy")
                 break
             }
         }
@@ -114,12 +127,20 @@ class NewGameViewController: UITableViewController, PeriodLengthViewControllerDe
 
     
     // MARK: - Navigation
+   
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SelectPeriodLength" {
             let nav = segue.destination as! UINavigationController
             let controller = nav.topViewController as! PeriodLengthViewController
             controller.delegate = self
             controller.previousLength = length
+        } else if segue.identifier == "StartGame" {
+            print("start game")
+            let controller = segue.destination as! GameViewController
+            controller.delegate = self
+            controller.length = length
+            //controller.delegate = self
         }
     }
  
