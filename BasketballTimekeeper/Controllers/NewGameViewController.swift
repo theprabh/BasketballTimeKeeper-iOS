@@ -139,7 +139,7 @@ class NewGameViewController: UITableViewController, PeriodLengthViewControllerDe
             print("start game")
             let controller = segue.destination as! GameViewController
             controller.delegate = self
-            controller.length = length
+            controller.totalTime = length
             //controller.delegate = self
         }
     }
