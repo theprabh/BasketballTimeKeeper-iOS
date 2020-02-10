@@ -28,6 +28,9 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     var team2Points = 0
     var team2Timeouts = 6
     var team2Fouls = 0
+    var pointsSwitchEnabled = true
+    var timeoutsSwitchEnabled = false
+    var foulsSwitchEnabled = true
     
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
@@ -35,6 +38,11 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     @IBOutlet weak var pointsSwitch: UISegmentedControl!
     @IBOutlet weak var timeoutsSwitch: UISegmentedControl!
     @IBOutlet weak var foulsSwitch: UISegmentedControl!
+    @IBOutlet weak var timeoutButton1: UIButton!
+    @IBOutlet weak var timeoutButton2: UIButton!
+    @IBOutlet weak var foulButton1: UIButton!
+    @IBOutlet weak var foulButton2: UIButton!
+    
     var half = 1
     var totalTime = 1200
     var countdownTimer = Timer()
@@ -55,6 +63,7 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     @IBOutlet weak var team2TimeoutsLabel: UILabel!
     @IBOutlet weak var team2FoulsLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         gameOverAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
@@ -69,7 +78,7 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     
     
     @IBAction func reset() {
-        let alert = UIAlertController(title: "Do you want to Rest?", message: "Press yes to reset back to the start of a new game.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Do you want to Reset?", message: "Press yes to reset back to the start of a new game.", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
             self.resetGame()
@@ -103,6 +112,53 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
         periodLabel.text = "1"
         timerLabel.text = "20:00"
         totalTime = 1200
+    }
+    
+    // MARK: - Switches
+    
+    @IBAction func pointsSwitchIndexChanged(_ sender: Any) {
+        switch pointsSwitch.selectedSegmentIndex {
+        case 0:
+            pointsSwitchEnabled = true
+        case 1:
+            pointsSwitchEnabled = false
+        default:
+            pointsSwitchEnabled = true
+        }
+    }
+    
+    @IBAction func timeoutsSwitchIndexChanged(_ sender: Any) {
+        switch timeoutsSwitch.selectedSegmentIndex {
+        case 0:
+            timeoutsSwitchEnabled = true
+            timeoutButton1.setTitle("+", for: .normal)
+            timeoutButton2.setTitle("+", for: .normal)
+        case 1:
+            timeoutsSwitchEnabled = false
+            timeoutButton1.setTitle("-", for: .normal)
+            timeoutButton2.setTitle("-", for: .normal)
+        default:
+            timeoutsSwitchEnabled = false
+            timeoutButton1.setTitle("-", for: .normal)
+            timeoutButton2.setTitle("-", for: .normal)
+        }
+    }
+    
+    @IBAction func foulSwitchIndexChanged(_ sender: Any) {
+        switch foulsSwitch.selectedSegmentIndex {
+        case 0:
+            foulsSwitchEnabled = true
+            foulButton1.setTitle("+", for: .normal)
+            foulButton2.setTitle("+", for: .normal)
+        case 1:
+            foulsSwitchEnabled = false
+            foulButton1.setTitle("-", for: .normal)
+            foulButton2.setTitle("-", for: .normal)
+        default:
+            foulsSwitchEnabled = true
+            foulButton1.setTitle("+", for: .normal)
+            foulButton2.setTitle("+", for: .normal)
+        }
     }
     
     // MARK: - Timer Functions
@@ -159,16 +215,36 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     //Adds 3 points to team depending on which button is pressed
     @IBAction func threePointer(button: UIButton) {
         if !isGameOver {
-            switch button.tag {
-            case 1:
-                team1Points += 3
-                team1PointsLabel.text = String(team1Points)
-            case 2:
-                team2Points += 3
-                team2PointsLabel.text = String(team2Points)
-            default:
-                return
+            if pointsSwitchEnabled {
+                switch button.tag {
+                case 1:
+                    team1Points += 3
+                    team1PointsLabel.text = String(team1Points)
+                case 2:
+                    team2Points += 3
+                    team2PointsLabel.text = String(team2Points)
+                default:
+                    return
+                }
+            } else {
+                switch button.tag {
+                case 1:
+                    team1Points -= 3
+                    if team1Points < 0 {
+                        team1Points = 0
+                    }
+                    team1PointsLabel.text = String(team1Points)
+                case 2:
+                    team2Points -= 3
+                    if team2Points < 0 {
+                        team2Points = 0
+                    }
+                    team2PointsLabel.text = String(team2Points)
+                default:
+                    return
+                }
             }
+            
         } else {
             self.present(gameOverAlert, animated: true)
         }
@@ -177,15 +253,34 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     //Adds 2 points to team depending on which button is pressed
     @IBAction func twoPointer(button: UIButton) {
         if !isGameOver {
-            switch button.tag {
-            case 1:
-                team1Points += 2
-                team1PointsLabel.text = String(team1Points)
-            case 2:
-                team2Points += 2
-                team2PointsLabel.text = String(team2Points)
-            default:
-                return
+            if pointsSwitchEnabled {
+                switch button.tag {
+                case 1:
+                    team1Points += 2
+                    team1PointsLabel.text = String(team1Points)
+                case 2:
+                    team2Points += 2
+                    team2PointsLabel.text = String(team2Points)
+                default:
+                    return
+                }
+            } else {
+                switch button.tag {
+                case 1:
+                    team1Points -= 2
+                    if team1Points < 0 {
+                        team1Points = 0
+                    }
+                    team1PointsLabel.text = String(team1Points)
+                case 2:
+                    team2Points -= 2
+                    if team2Points < 0 {
+                        team2Points = 0
+                    }
+                    team2PointsLabel.text = String(team2Points)
+                default:
+                    return
+                }
             }
         } else {
             self.present(gameOverAlert, animated: true)
@@ -195,15 +290,34 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     //Adds 1 points to team depending on which button is pressed
     @IBAction func freeThrow(button: UIButton) {
         if !isGameOver {
-            switch button.tag {
-            case 1:
-                team1Points += 1
-                team1PointsLabel.text = String(team1Points)
-            case 2:
-                team2Points += 1
-                team2PointsLabel.text = String(team2Points)
-            default:
-                return
+            if pointsSwitchEnabled {
+                switch button.tag {
+                case 1:
+                    team1Points += 1
+                    team1PointsLabel.text = String(team1Points)
+                case 2:
+                    team2Points += 1
+                    team2PointsLabel.text = String(team2Points)
+                default:
+                    return
+                }
+            } else {
+                switch button.tag {
+                case 1:
+                    team1Points -= 1
+                    if team1Points < 0 {
+                        team1Points = 0
+                    }
+                    team1PointsLabel.text = String(team1Points)
+                case 2:
+                    team2Points -= 1
+                    if team2Points < 0 {
+                        team2Points = 0
+                    }
+                    team2PointsLabel.text = String(team2Points)
+                default:
+                    return
+                }
             }
         } else {
             self.present(gameOverAlert, animated: true)
@@ -213,24 +327,37 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     //Subtracts 1 timeout to team depending on which button is pressed
     @IBAction func timeout(button: UIButton) {
         if !isGameOver {
-            switch button.tag {
-            case 1:
-                if team1Timeouts > 0 {
-                    team1Timeouts -= 1
+            if !timeoutsSwitchEnabled {
+                switch button.tag {
+                case 1:
+                    if team1Timeouts > 0 {
+                        team1Timeouts -= 1
+                        team1TimeoutsLabel.text = String(team1Timeouts)
+                    } else {
+                        self.present(timeoutAlert, animated: true)
+                    }
+                    
+                case 2:
+                    if team2Timeouts > 0 {
+                        team2Timeouts -= 1
+                        team2TimeoutsLabel.text = String(team2Timeouts)
+                    } else {
+                        self.present(timeoutAlert, animated: true)
+                    }
+                default:
+                    return
+                }
+            } else {
+                switch button.tag {
+                case 1:
+                    team1Timeouts += 1
                     team1TimeoutsLabel.text = String(team1Timeouts)
-                } else {
-                    self.present(timeoutAlert, animated: true)
-                }
-                
-            case 2:
-                if team2Timeouts > 0 {
-                    team2Timeouts -= 1
+                case 2:
+                    team2Timeouts += 1
                     team2TimeoutsLabel.text = String(team2Timeouts)
-                } else {
-                    self.present(timeoutAlert, animated: true)
+                default:
+                    return
                 }
-            default:
-                return
             }
         } else {
             self.present(gameOverAlert, animated: true)
@@ -240,16 +367,36 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     //Adds 1 foul to team depending on which button is pressed
     @IBAction func foul(button: UIButton) {
         if !isGameOver {
-            switch button.tag {
-            case 1:
-                team1Fouls += 1
-                team1FoulsLabel.text = String(team1Fouls)
-            case 2:
-                team2Fouls += 1
-                team2FoulsLabel.text = String(team2Fouls)
-            default:
-                return
+            if foulsSwitchEnabled {
+                switch button.tag {
+                case 1:
+                    team1Fouls += 1
+                    team1FoulsLabel.text = String(team1Fouls)
+                case 2:
+                    team2Fouls += 1
+                    team2FoulsLabel.text = String(team2Fouls)
+                default:
+                    return
+                }
+            } else {
+                switch button.tag {
+                case 1:
+                    team1Fouls -= 1
+                    if team1Fouls < 0 {
+                        team1Fouls = 0
+                    }
+                    team1FoulsLabel.text = String(team1Fouls)
+                case 2:
+                    team2Fouls -= 1
+                    if team2Fouls < 0 {
+                        team2Fouls = 0
+                    }
+                    team2FoulsLabel.text = String(team2Fouls)
+                default:
+                    return
+                }
             }
+            
         } else {
             self.present(gameOverAlert, animated: true)
         }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cfL-Ge-RAd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cfL-Ge-RAd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -256,7 +256,7 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyH-wL-dXM">
                                         <rect key="frame" x="40" y="212" width="79" height="57"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="+3"/>
+                                        <state key="normal" title="3"/>
                                         <connections>
                                             <action selector="threePointerWithButton:" destination="8Yc-fJ-Mrt" eventType="touchUpInside" id="syq-0Z-lov"/>
                                         </connections>
@@ -264,7 +264,7 @@
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anV-oC-9Gj">
                                         <rect key="frame" x="275" y="213" width="79" height="57"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="+3"/>
+                                        <state key="normal" title="3"/>
                                         <connections>
                                             <action selector="threePointerWithButton:" destination="8Yc-fJ-Mrt" eventType="touchUpInside" id="vDX-ka-UJy"/>
                                         </connections>
@@ -272,7 +272,7 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtL-0W-SnU">
                                         <rect key="frame" x="40" y="279" width="79" height="57.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="+2"/>
+                                        <state key="normal" title="2"/>
                                         <connections>
                                             <action selector="twoPointerWithButton:" destination="8Yc-fJ-Mrt" eventType="touchUpInside" id="ZCs-Op-yOD"/>
                                         </connections>
@@ -280,7 +280,7 @@
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLG-hn-Lbu">
                                         <rect key="frame" x="275" y="280" width="79" height="57.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="+2"/>
+                                        <state key="normal" title="2"/>
                                         <connections>
                                             <action selector="twoPointerWithButton:" destination="8Yc-fJ-Mrt" eventType="touchUpInside" id="t44-QB-Jd6"/>
                                         </connections>
@@ -288,7 +288,7 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frJ-Rv-oXF">
                                         <rect key="frame" x="40" y="346.5" width="79" height="57"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="+1"/>
+                                        <state key="normal" title="1"/>
                                         <connections>
                                             <action selector="freeThrowWithButton:" destination="8Yc-fJ-Mrt" eventType="touchUpInside" id="EHn-pO-Z1V"/>
                                         </connections>
@@ -300,14 +300,20 @@
                                             <segment title="-"/>
                                         </segments>
                                         <color key="selectedSegmentTintColor" red="0.92217528820000005" green="0.46409559249999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="pointsSwitchIndexChanged:" destination="8Yc-fJ-Mrt" eventType="valueChanged" id="GKy-Ik-4g1"/>
+                                        </connections>
                                     </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2LD-4Q-aw6">
+                                    <segmentedControl opaque="NO" tag="1" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="2LD-4Q-aw6">
                                         <rect key="frame" x="169.5" y="441.5" width="55" height="32"/>
                                         <segments>
                                             <segment title="+"/>
                                             <segment title="-"/>
                                         </segments>
                                         <color key="selectedSegmentTintColor" red="0.92217528820000005" green="0.46409559249999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="timeoutsSwitchIndexChanged:" destination="8Yc-fJ-Mrt" eventType="valueChanged" id="sMa-FC-iEL"/>
+                                        </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5R-Y4-v6R">
                                         <rect key="frame" x="40" y="444.5" width="39.5" height="29"/>
@@ -330,14 +336,14 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWl-aL-Zq2">
                                         <rect key="frame" x="99.5" y="444.5" width="39.5" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="+"/>
+                                        <state key="normal" title="-"/>
                                         <connections>
                                             <action selector="timeoutWithButton:" destination="8Yc-fJ-Mrt" eventType="touchUpInside" id="OW5-2h-9qg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oS-LN-qX2">
                                         <rect key="frame" x="99.5" y="514.5" width="39.5" height="28.5"/>
-                                        <state key="normal" title="-"/>
+                                        <state key="normal" title="+"/>
                                         <connections>
                                             <action selector="foulWithButton:" destination="8Yc-fJ-Mrt" eventType="touchUpInside" id="bZs-fU-SSR"/>
                                         </connections>
@@ -345,7 +351,7 @@
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKe-Kn-va8">
                                         <rect key="frame" x="275" y="347.5" width="79" height="57"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="+1"/>
+                                        <state key="normal" title="1"/>
                                         <connections>
                                             <action selector="freeThrowWithButton:" destination="8Yc-fJ-Mrt" eventType="touchUpInside" id="IOW-Iu-dmo"/>
                                         </connections>
@@ -365,25 +371,28 @@
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9f-Sq-aU3">
                                         <rect key="frame" x="255" y="444.5" width="39.5" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="+"/>
+                                        <state key="normal" title="-"/>
                                         <connections>
                                             <action selector="timeoutWithButton:" destination="8Yc-fJ-Mrt" eventType="touchUpInside" id="Ikg-VL-Q9U"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3N-r0-9Dc">
                                         <rect key="frame" x="255" y="514.5" width="39.5" height="28.5"/>
-                                        <state key="normal" title="-"/>
+                                        <state key="normal" title="+"/>
                                         <connections>
                                             <action selector="foulWithButton:" destination="8Yc-fJ-Mrt" eventType="touchUpInside" id="iKU-Ka-Rmi"/>
                                         </connections>
                                     </button>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RZb-7A-g9i">
+                                    <segmentedControl opaque="NO" tag="2" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RZb-7A-g9i">
                                         <rect key="frame" x="169.5" y="511.5" width="55" height="32"/>
                                         <segments>
                                             <segment title="+"/>
                                             <segment title="-"/>
                                         </segments>
                                         <color key="selectedSegmentTintColor" red="0.92217528820000005" green="0.46409559249999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="foulSwitchIndexChanged:" destination="8Yc-fJ-Mrt" eventType="valueChanged" id="zEB-v9-8U1"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.12129447609186172" green="0.12922456860542297" blue="0.14169979095458984" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -543,6 +552,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="foulButton1" destination="9oS-LN-qX2" id="dWU-Xu-CFU"/>
+                        <outlet property="foulButton2" destination="g3N-r0-9Dc" id="g8X-7d-bXs"/>
                         <outlet property="foulsSwitch" destination="RZb-7A-g9i" id="LE5-Yx-KFr"/>
                         <outlet property="periodLabel" destination="ZlP-La-k7V" id="8Jg-sa-kQa"/>
                         <outlet property="playPauseButton" destination="rcr-Yw-BIn" id="q8I-Eg-WuU"/>
@@ -555,6 +566,8 @@
                         <outlet property="team2NameLabel" destination="UUf-LO-nrS" id="O8f-Fv-GgM"/>
                         <outlet property="team2PointsLabel" destination="Hqd-jJ-86I" id="JU4-KO-1fg"/>
                         <outlet property="team2TimeoutsLabel" destination="S8t-1d-XEu" id="mcL-a3-W3G"/>
+                        <outlet property="timeoutButton1" destination="OWl-aL-Zq2" id="CXU-4W-eCf"/>
+                        <outlet property="timeoutButton2" destination="L9f-Sq-aU3" id="V6W-eR-dIk"/>
                         <outlet property="timeoutsSwitch" destination="2LD-4Q-aw6" id="gx5-Ln-pzR"/>
                         <outlet property="timerLabel" destination="GqR-9K-uHJ" id="Ao0-cA-qFe"/>
                     </connections>
