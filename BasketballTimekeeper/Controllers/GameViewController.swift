@@ -46,10 +46,15 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     var half = 1
     var totalTime = 1200
     var countdownTimer = Timer()
+    var gameStarted = false
     var isTimerRunning = false
     var isGameOver = false
+    var isPeriodOver = false
+    
     let gameOverAlert = UIAlertController(title: "Game Over", message: "The game is over, please press End Game", preferredStyle: .alert)
     let timeoutAlert = UIAlertController(title: "No Timeouts", message: "There are no timeouts remaining", preferredStyle: .alert)
+    
+    @IBOutlet weak var timerButton: UIButton!
     
     // Team 1 Labels
     @IBOutlet weak var team1NameLabel: UILabel!
@@ -168,6 +173,9 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self , selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
+    func pauseTimer() {
+        countdownTimer.invalidate()
+    }
     
     // Updates timer depending on time left and half
     @objc func updateTimer() {
@@ -183,6 +191,12 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
             timerLabel.text = "20:00"
             totalTime = 1200
             isTimerRunning = false
+            if #available(iOS 13.0, *) {
+                timerButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            } else {
+                // Fallback on earlier versions
+            }
+            
         } else {
             Sound.play(file: "buzzer.wav")
             isGameOver = true
@@ -197,12 +211,19 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     }
     
     @IBAction func playPauseTimer(button: UIButton) {
-        print("helllllloooo")
         if !isTimerRunning {
             isTimerRunning = true
             runTimer()
             if #available(iOS 13.0, *) {
                 button.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+            } else {
+                // Fallback on earlier versions
+            }
+        } else if isTimerRunning {
+            isTimerRunning = false
+            pauseTimer()
+            if #available(iOS 13.0, *) {
+                button.setImage(UIImage(systemName: "play.fill"), for: .normal)
             } else {
                 // Fallback on earlier versions
             }
