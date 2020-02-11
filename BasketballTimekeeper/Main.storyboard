@@ -560,6 +560,7 @@
                         <outlet property="foulButton2" destination="g3N-r0-9Dc" id="g8X-7d-bXs"/>
                         <outlet property="foulsSwitch" destination="RZb-7A-g9i" id="LE5-Yx-KFr"/>
                         <outlet property="periodLabel" destination="ZlP-La-k7V" id="8Jg-sa-kQa"/>
+                        <outlet property="periodText" destination="apn-Xv-Qh1" id="Z5a-Gg-yfc"/>
                         <outlet property="playPauseButton" destination="rcr-Yw-BIn" id="q8I-Eg-WuU"/>
                         <outlet property="pointsSwitch" destination="Th8-yZ-4pS" id="eon-wW-N5x"/>
                         <outlet property="team1FoulsLabel" destination="sby-la-up5" id="1qD-Eo-OST"/>

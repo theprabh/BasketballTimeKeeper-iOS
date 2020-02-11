@@ -44,6 +44,7 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     @IBOutlet weak var timeoutButton2: UIButton!
     @IBOutlet weak var foulButton1: UIButton!
     @IBOutlet weak var foulButton2: UIButton!
+    @IBOutlet weak var periodText: UILabel!
     
     var period = 1
     var isHalf = true
@@ -75,7 +76,11 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Half: \(isHalf)")
+        if isHalf {
+            periodText.text = "Half:"
+        } else {
+            periodText.text = "Quarter:"
+        }
         gameTime *= 60
         startTime = gameTime
         periodLabel.text = "1"
@@ -192,20 +197,60 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
         
         if gameTime != 0 {
             gameTime -= 1
-        } else if gameTime == 0 && period == 1{
+        } else if gameTime == 0 {
             countdownTimer.invalidate()
             Sound.play(file: "buzzer.wav")
-            period = 2
-            periodLabel.text = "2"
-            timerLabel.text = "\(timeFormat(totalSeconds: startTime))"
-            gameTime = startTime
-            isTimerRunning = false
-            if #available(iOS 13.0, *) {
-                timerButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
-            } else {
-                // Fallback on earlier versions
-            }
             
+            switch isHalf {
+            case true:
+                switch period {
+                case 1:
+                    period = 2
+                    periodLabel.text = "2"
+                case 2:
+                    isGameOver = true
+                    countdownTimer.invalidate()
+                default:
+                    break
+                }
+                timerLabel.text = "\(timeFormat(totalSeconds: startTime))"
+                gameTime = startTime
+                isTimerRunning = false
+                if #available(iOS 13.0, *) {
+                    timerButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+                } else {
+                    // Fallback on earlier versions
+                }
+            case false:
+                switch period {
+                case 1:
+                    period = 2
+                    periodLabel.text = "2"
+                case 2:
+                    period = 3
+                    periodLabel.text = "3"
+                case 3:
+                    period = 4
+                    periodLabel.text = "4"
+                case 4:
+                    isGameOver = true
+                    countdownTimer.invalidate()
+                    self.present(gameOverAlert, animated: true)
+                default:
+                    break
+                }
+                
+                timerLabel.text = "\(timeFormat(totalSeconds: startTime))"
+                gameTime = startTime
+                isTimerRunning = false
+                if #available(iOS 13.0, *) {
+                    timerButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+                } else {
+                    // Fallback on earlier versions
+                }
+            default:
+                break
+            }
         } else {
             Sound.play(file: "buzzer.wav")
             isGameOver = true
