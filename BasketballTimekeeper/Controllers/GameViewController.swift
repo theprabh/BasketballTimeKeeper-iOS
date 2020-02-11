@@ -15,10 +15,10 @@ protocol GameViewControllerDelegate: class {
 
 class GameViewController: UIViewController, NewGameViewControllerDelegate {
     
-    func newGameViewController(_ controller: NewGameViewController, didFinishSelecting gameLength: Int) {
+    func newGameViewController(_ controller: NewGameViewController, didFinishSelecting gameLength: Int, half: Bool) {
         //print("Game Length: \(gameLength)")
         gameTime = gameLength
-        
+        isHalf = half
     }
     
     weak var delegate: GameViewControllerDelegate?
@@ -45,7 +45,8 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     @IBOutlet weak var foulButton1: UIButton!
     @IBOutlet weak var foulButton2: UIButton!
     
-    var half = 1
+    var period = 1
+    var isHalf = true
     var gameTime = 0
     var startTime = 0
     var countdownTimer = Timer()
@@ -74,6 +75,7 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Half: \(isHalf)")
         gameTime *= 60
         startTime = gameTime
         periodLabel.text = "1"
@@ -120,7 +122,7 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
         
         isTimerRunning = false
         isGameOver = false
-        half = 1
+        period = 1
         periodLabel.text = "1"
         timerLabel.text = "\(timeFormat(totalSeconds: startTime))"
         gameTime = startTime
@@ -190,10 +192,10 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
         
         if gameTime != 0 {
             gameTime -= 1
-        } else if gameTime == 0 && half == 1{
+        } else if gameTime == 0 && period == 1{
             countdownTimer.invalidate()
             Sound.play(file: "buzzer.wav")
-            half = 2
+            period = 2
             periodLabel.text = "2"
             timerLabel.text = "\(timeFormat(totalSeconds: startTime))"
             gameTime = startTime

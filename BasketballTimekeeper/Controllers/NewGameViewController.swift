@@ -9,7 +9,7 @@
 import UIKit
 
 protocol NewGameViewControllerDelegate: class {
-    func newGameViewController(_ controller: NewGameViewController, didFinishSelecting gameLength: Int)
+    func newGameViewController(_ controller: NewGameViewController, didFinishSelecting gameLength: Int, half: Bool)
 }
 
 class NewGameViewController: UITableViewController, PeriodLengthViewControllerDelegate, GameViewControllerDelegate {
@@ -20,6 +20,18 @@ class NewGameViewController: UITableViewController, PeriodLengthViewControllerDe
     
     
     
+    // MARK: - Actions
+    
+    @IBAction func segmentIndexChanged(_ sender: Any) {
+        switch periodControl.selectedSegmentIndex {
+        case 0:
+            half = true
+        case 1:
+            half = false
+        default:
+            half = true
+        }
+    }
     
     // MARK: - Period Length Delegates
     
@@ -38,6 +50,8 @@ class NewGameViewController: UITableViewController, PeriodLengthViewControllerDe
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var lengthLabel: UILabel!
+    @IBOutlet weak var periodControl: UISegmentedControl!
+    var half = true
     var length = 20
     
     override func viewDidLoad() {
@@ -140,6 +154,7 @@ class NewGameViewController: UITableViewController, PeriodLengthViewControllerDe
             let controller = segue.destination as! GameViewController
             controller.delegate = self
             controller.gameTime = length
+            controller.isHalf = half
             //controller.delegate = self
         }
     }

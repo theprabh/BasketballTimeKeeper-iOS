@@ -141,7 +141,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="J5h-eE-dNh">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="J5h-eE-dNh">
                                                     <rect key="frame" x="20" y="10" width="147" height="25"/>
                                                     <color key="backgroundColor" red="1" green="0.60149651765823364" blue="0.07637421041727066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <segments>
@@ -149,6 +149,9 @@
                                                         <segment title="Quarters"/>
                                                     </segments>
                                                     <color key="tintColor" red="0.18429392580000001" green="0.18432641029999999" blue="0.18428686259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="segmentIndexChanged:" destination="ryL-nz-RkA" eventType="valueChanged" id="fyd-wx-xZb"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -206,6 +209,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="uac-wl-N85" id="9uK-tx-Czv"/>
                         <outlet property="lengthLabel" destination="861-Jb-aeQ" id="rkF-kQ-zRI"/>
+                        <outlet property="periodControl" destination="J5h-eE-dNh" id="BPM-K7-kLP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCU-9B-R6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
