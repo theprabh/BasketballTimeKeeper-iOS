@@ -16,7 +16,9 @@ protocol GameViewControllerDelegate: class {
 class GameViewController: UIViewController, NewGameViewControllerDelegate {
     
     func newGameViewController(_ controller: NewGameViewController, didFinishSelecting gameLength: Int) {
-        totalTime = gameLength
+        //print("Game Length: \(gameLength)")
+        gameTime = gameLength
+        
     }
     
     weak var delegate: GameViewControllerDelegate?
@@ -44,7 +46,8 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     @IBOutlet weak var foulButton2: UIButton!
     
     var half = 1
-    var totalTime = 1200
+    var gameTime = 0
+    var startTime = 0
     var countdownTimer = Timer()
     var gameStarted = false
     var isTimerRunning = false
@@ -71,9 +74,13 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        gameTime *= 60
+        startTime = gameTime
+        periodLabel.text = "1"
+        timerLabel.text = "\(timeFormat(totalSeconds: startTime))"
         gameOverAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         timeoutAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        team1NameLabel.text = "\(totalTime)"
+        team1NameLabel.text = "\(gameTime)"
         playPauseButton.imageView?.contentMode = .scaleAspectFit
         playPauseButton.imageEdgeInsets = UIEdgeInsets(top: 70,left: 70,bottom: 70,right: 70)
 
@@ -115,8 +122,8 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
         isGameOver = false
         half = 1
         periodLabel.text = "1"
-        timerLabel.text = "20:00"
-        totalTime = 1200
+        timerLabel.text = "\(timeFormat(totalSeconds: startTime))"
+        gameTime = startTime
     }
     
     // MARK: - Switches
@@ -179,17 +186,17 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     
     // Updates timer depending on time left and half
     @objc func updateTimer() {
-        timerLabel.text = "\(timeFormat(totalSeconds: totalTime))"
+        timerLabel.text = "\(timeFormat(totalSeconds: gameTime))"
         
-        if totalTime != 0 {
-            totalTime -= 1
-        } else if totalTime == 0 && half == 1{
+        if gameTime != 0 {
+            gameTime -= 1
+        } else if gameTime == 0 && half == 1{
             countdownTimer.invalidate()
             Sound.play(file: "buzzer.wav")
             half = 2
             periodLabel.text = "2"
-            timerLabel.text = "20:00"
-            totalTime = 1200
+            timerLabel.text = "\(timeFormat(totalSeconds: startTime))"
+            gameTime = startTime
             isTimerRunning = false
             if #available(iOS 13.0, *) {
                 timerButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
