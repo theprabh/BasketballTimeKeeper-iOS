@@ -15,18 +15,21 @@ protocol GameViewControllerDelegate: class {
 
 class GameViewController: UIViewController, NewGameViewControllerDelegate {
     
-    func newGameViewController(_ controller: NewGameViewController, didFinishSelecting gameLength: Int, half: Bool) {
+    func newGameViewController(_ controller: NewGameViewController, didFinishSelecting gameLength: Int, half: Bool, team1Name: String, team2Name: String) {
         //print("Game Length: \(gameLength)")
         gameTime = gameLength
         isHalf = half
+        team1NameLabel.text = team1Name
+        team2NameLabel.text = team2Name
     }
     
     weak var delegate: GameViewControllerDelegate?
     
-    
+    var team1Name = ""
     var team1Points = 0
     var team1Timeouts = 6
     var team1Fouls = 0
+    var team2Name = ""
     var team2Points = 0
     var team2Timeouts = 6
     var team2Fouls = 0
@@ -87,7 +90,8 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
         timerLabel.text = "\(timeFormat(totalSeconds: startTime))"
         gameOverAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         timeoutAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        team1NameLabel.text = "\(gameTime)"
+        team1NameLabel.text = "\(team1Name)"
+        team2NameLabel.text = "\(team2Name)"
         playPauseButton.imageView?.contentMode = .scaleAspectFit
         playPauseButton.imageEdgeInsets = UIEdgeInsets(top: 70,left: 70,bottom: 70,right: 70)
 

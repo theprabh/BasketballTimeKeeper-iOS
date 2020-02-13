@@ -16,6 +16,7 @@ protocol TeamSelectViewControllerDelegate: class {
 class TeamSelectViewController: UITableViewController {
     
     let placeHolderString = "placeholder"
+    weak var delegate: TeamSelectViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class TeamSelectViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
 
     // MARK: - Table view data source
 
@@ -87,7 +89,7 @@ class TeamSelectViewController: UITableViewController {
     
     // MARK: - Navigation
     @IBAction func cancel() {
-        //delegate?.teamSelectViewControllerDidCancel(self)
+        delegate?.teamSelectViewControllerDidCancel(self)
     }
     
     @IBAction func done() {

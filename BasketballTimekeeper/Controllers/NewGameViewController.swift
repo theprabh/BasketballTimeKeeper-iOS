@@ -9,18 +9,23 @@
 import UIKit
 
 protocol NewGameViewControllerDelegate: class {
-    func newGameViewController(_ controller: NewGameViewController, didFinishSelecting gameLength: Int, half: Bool)
+    func newGameViewController(_ controller: NewGameViewController, didFinishSelecting gameLength: Int, half: Bool, team1Name: String, team2Name: String)
 }
 
-class NewGameViewController: UITableViewController, PeriodLengthViewControllerDelegate, GameViewControllerDelegate {
+class NewGameViewController: UITableViewController, PeriodLengthViewControllerDelegate, GameViewControllerDelegate, UITextFieldDelegate {
     
     func gameViewControllerDidCancel(_ controller: GameViewController) {
         navigationController?.popViewController(animated: true)
     }
     
     
-    
     // MARK: - Actions
+    
+    // Closes keyboard after return is hit
+    func textFieldShouldReturn(_ text: UITextField) -> Bool {
+        text.resignFirstResponder()
+        return true
+    }
     
     @IBAction func segmentIndexChanged(_ sender: Any) {
         switch periodControl.selectedSegmentIndex {
@@ -51,13 +56,16 @@ class NewGameViewController: UITableViewController, PeriodLengthViewControllerDe
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var lengthLabel: UILabel!
     @IBOutlet weak var periodControl: UISegmentedControl!
+    @IBOutlet weak var team1Text: UITextField!
+    @IBOutlet weak var team2Text: UITextField!
     var half = true
     var length = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.team1Text.delegate = self
+        self.team2Text.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "NewGameItem")
-        
         let currentDate = Date()
         let dateString = DateFormatter.localizedString(from: currentDate, dateStyle: .full, timeStyle: .none)
         dateLabel.text = dateString
@@ -155,7 +163,8 @@ class NewGameViewController: UITableViewController, PeriodLengthViewControllerDe
             controller.delegate = self
             controller.gameTime = length
             controller.isHalf = half
-            //controller.delegate = self
+            controller.team1Name = team1Text.text ?? "Name not found"
+            controller.team2Name = team2Text.text ?? "Name not found"
         }
     }
  

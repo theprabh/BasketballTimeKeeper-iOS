@@ -87,6 +87,22 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q8X-Z4-ArL" id="mJF-CA-9XF">
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Team 1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ea-2r-QV4">
+                                                    <rect key="frame" x="10" y="5" width="300" height="34"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="300" id="yPz-2Y-HUn"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5Ea-2r-QV4" firstAttribute="top" secondItem="mJF-CA-9XF" secondAttribute="top" constant="5" id="aOd-Yn-6uP"/>
+                                                <constraint firstItem="5Ea-2r-QV4" firstAttribute="leading" secondItem="mJF-CA-9XF" secondAttribute="leading" constant="10" id="qq5-TW-mGi"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
@@ -99,6 +115,22 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DLt-Og-fNx" id="NAj-tR-cBf">
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Team 2" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hA9-0V-mKO">
+                                                    <rect key="frame" x="10" y="5" width="300" height="34"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="300" id="nWp-TA-r80"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hA9-0V-mKO" firstAttribute="leading" secondItem="NAj-tR-cBf" secondAttribute="leading" constant="10" id="JMe-lv-M3h"/>
+                                                <constraint firstItem="hA9-0V-mKO" firstAttribute="top" secondItem="NAj-tR-cBf" secondAttribute="top" constant="5" id="Qwm-dg-C2r"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
@@ -210,6 +242,8 @@
                         <outlet property="dateLabel" destination="uac-wl-N85" id="9uK-tx-Czv"/>
                         <outlet property="lengthLabel" destination="861-Jb-aeQ" id="rkF-kQ-zRI"/>
                         <outlet property="periodControl" destination="J5h-eE-dNh" id="BPM-K7-kLP"/>
+                        <outlet property="team1Text" destination="5Ea-2r-QV4" id="Pbi-AB-rsp"/>
+                        <outlet property="team2Text" destination="hA9-0V-mKO" id="c0j-t0-1nH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCU-9B-R6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -623,7 +657,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="SKd-Td-PTY">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="mWN-tt-rJh"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="mWN-tt-rJh">
+                            <connections>
+                                <action selector="cancel" destination="1Ma-cc-TUf" id="RxQ-RU-daD"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="WaN-tz-VsD"/>
                     </navigationItem>
                 </tableViewController>
@@ -699,7 +737,7 @@
         <image name="start_icon.png" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="y40-Df-Vhd"/>
+        <segue reference="hK6-ad-fTc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
