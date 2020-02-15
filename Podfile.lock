@@ -1,26 +1,26 @@
 PODS:
-  - Realm (3.19.0):
-    - Realm/Headers (= 3.19.0)
-  - Realm/Headers (3.19.0)
-  - RealmSwift (3.19.0):
-    - Realm (= 3.19.0)
-  - SwiftySound (1.1.0)
+  - Realm (4.3.2):
+    - Realm/Headers (= 4.3.2)
+  - Realm/Headers (4.3.2)
+  - RealmSwift (4.3.2):
+    - Realm (= 4.3.2)
+  - SwiftySound (1.2.0)
 
 DEPENDENCIES:
   - RealmSwift
   - SwiftySound
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - Realm
     - RealmSwift
     - SwiftySound
 
 SPEC CHECKSUMS:
-  Realm: 995d585bcf699aaff226715886c849a29dd3d07f
-  RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
-  SwiftySound: eb46cc2399cf7d94f58c372f38216e15e0a6de3e
+  Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
+  RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
+  SwiftySound: 9eb28bb14edb601b40027e44319e0ef8383f88bf
 
-PODFILE CHECKSUM: 8eb6e10022d5eba7b832db6af5d13acf018d6380
+PODFILE CHECKSUM: 4e54a49a80e0e5c1474eeb667024943b1acfd38b
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.8.4

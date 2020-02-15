@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftySound
+import RealmSwift
 
 protocol GameViewControllerDelegate: class {
     func gameViewControllerDidCancel(_ controller: GameViewController)
@@ -25,6 +26,8 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     
     weak var delegate: GameViewControllerDelegate?
     
+    
+    
     var team1Name = ""
     var team1Points = 0
     var team1Timeouts = 6
@@ -36,6 +39,10 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     var pointsSwitchEnabled = true
     var timeoutsSwitchEnabled = false
     var foulsSwitchEnabled = true
+    
+    let realm = try! Realm()
+    let game = Game()
+    
     
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
@@ -79,6 +86,7 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if isHalf {
             periodText.text = "Half:"
         } else {
@@ -485,6 +493,18 @@ class GameViewController: UIViewController, NewGameViewControllerDelegate {
     // MARK: - Navigation
     
     @IBAction func cancel() {
+        let currentDate = Date()
+        let dateString = DateFormatter.localizedString(from: currentDate, dateStyle: .full, timeStyle: .none)
+        //let team1 = Team(value: ["name" : team1Name])
+        //let team2 = Team(value: ["name" : team2Name])
+        let game = Game(value: ["team1Name" : team1Name, "team2Name" : team2Name, "date" : dateString, "team1Score" : team1Points, "team2Score" : team2Points])
+        try! realm.write {
+            realm.add(game)
+        }
+        //print("Realm is empty: \(realm.isEmpty)")
+        //print("Team 1: \(team1.name)")
+        //print("Team 2: \(team2.name)")
+        //print("Objects: \(realm.objects(Game.self))")
         delegate?.gameViewControllerDidCancel(self)
     }
 

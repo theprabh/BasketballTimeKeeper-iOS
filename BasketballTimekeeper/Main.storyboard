@@ -37,14 +37,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="tbf-TO-IZN">
-                                <rect key="frame" x="107" y="10" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="2Mv-8l-Yq4"/>
-                                    <constraint firstAttribute="width" constant="200" id="pd7-92-ftu"/>
-                                </constraints>
+                                <rect key="frame" x="103.5" y="10" width="207" height="269.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ffm-p3-P27">
-                                <rect key="frame" x="20" y="230" width="308" height="84"/>
+                                <rect key="frame" x="20" y="299.5" width="308" height="84"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="60"/>
                                 <state key="normal" title="New Game">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,13 +49,37 @@
                                     <segue destination="ryL-nz-RkA" kind="show" id="aQp-Fa-rUo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dl-Si-rTf">
+                                <rect key="frame" x="20" y="403.5" width="286" height="84"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="60"/>
+                                <state key="normal" title="Game Log">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9c4-Xu-ITN" kind="show" id="a0N-dd-MpF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlP-hs-TL9">
+                                <rect key="frame" x="20" y="507.5" width="223" height="84"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="60"/>
+                                <state key="normal" title="Rosters">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tbf-TO-IZN" firstAttribute="centerX" secondItem="Kvd-US-99J" secondAttribute="centerX" id="3hH-Lz-HAP"/>
+                            <constraint firstItem="tbf-TO-IZN" firstAttribute="top" secondItem="Dmw-yh-u3S" secondAttribute="top" constant="10" id="TmI-ns-XnQ"/>
                             <constraint firstItem="Ffm-p3-P27" firstAttribute="leading" secondItem="Dmw-yh-u3S" secondAttribute="leading" constant="20" id="Xtn-kn-HLL"/>
                             <constraint firstItem="tbf-TO-IZN" firstAttribute="top" secondItem="Dmw-yh-u3S" secondAttribute="top" constant="10" id="ZsW-MM-Qjz"/>
-                            <constraint firstItem="Ffm-p3-P27" firstAttribute="top" secondItem="tbf-TO-IZN" secondAttribute="bottom" constant="20" id="mH5-3P-bLM"/>
+                            <constraint firstItem="7Dl-Si-rTf" firstAttribute="leading" secondItem="Dmw-yh-u3S" secondAttribute="leading" constant="20" id="a4L-an-1UW"/>
+                            <constraint firstItem="JlP-hs-TL9" firstAttribute="top" secondItem="7Dl-Si-rTf" secondAttribute="bottom" constant="20" id="cG4-A4-5dj"/>
+                            <constraint firstItem="tbf-TO-IZN" firstAttribute="height" secondItem="Kvd-US-99J" secondAttribute="height" multiplier="1/3" id="gw0-eu-HS9"/>
+                            <constraint firstItem="JlP-hs-TL9" firstAttribute="leading" secondItem="Dmw-yh-u3S" secondAttribute="leading" constant="20" id="jGW-d6-T5L"/>
+                            <constraint firstItem="Ffm-p3-P27" firstAttribute="top" secondItem="tbf-TO-IZN" secondAttribute="bottom" constant="20" id="oOd-VW-gYc"/>
+                            <constraint firstItem="tbf-TO-IZN" firstAttribute="width" secondItem="Kvd-US-99J" secondAttribute="width" multiplier="1/2" id="xDt-R9-hl9"/>
+                            <constraint firstItem="7Dl-Si-rTf" firstAttribute="top" secondItem="Ffm-p3-P27" secondAttribute="bottom" constant="20" id="yS2-4Y-F7K"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dmw-yh-u3S"/>
                     </view>
@@ -68,6 +88,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fR-Xm-NYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-42.028985507246382" y="77.678571428571431"/>
+        </scene>
+        <!--Game Log-->
+        <scene sceneID="ebB-TV-KwJ">
+            <objects>
+                <tableViewController id="9c4-Xu-ITN" customClass="GameLogViewController" customModule="BasketballTimekeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cNT-Pf-O9i">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1843152642" green="0.18431103230000001" blue="0.18431386350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GameLogItem" rowHeight="98" id="sxV-ko-fxr">
+                                <rect key="frame" x="0.0" y="28" width="414" height="98"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sxV-ko-fxr" id="lUf-b6-hKM">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgW-Sk-goE">
+                                            <rect key="frame" x="20" y="40" width="45" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFp-GN-OEW">
+                                            <rect key="frame" x="20" y="11" width="61.5" height="24"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKS-um-k10">
+                                            <rect key="frame" x="20" y="66" width="36" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jFp-GN-OEW" firstAttribute="top" secondItem="lUf-b6-hKM" secondAttribute="topMargin" id="6hK-cz-VBY"/>
+                                        <constraint firstItem="jFp-GN-OEW" firstAttribute="leading" secondItem="lUf-b6-hKM" secondAttribute="leadingMargin" id="Scc-AH-KZE"/>
+                                        <constraint firstItem="QgW-Sk-goE" firstAttribute="top" secondItem="jFp-GN-OEW" secondAttribute="bottom" constant="5" id="WAU-uw-hft"/>
+                                        <constraint firstItem="QgW-Sk-goE" firstAttribute="leading" secondItem="lUf-b6-hKM" secondAttribute="leadingMargin" id="gwI-oy-4Cr"/>
+                                        <constraint firstItem="gKS-um-k10" firstAttribute="leading" secondItem="lUf-b6-hKM" secondAttribute="leadingMargin" id="led-LX-PV7"/>
+                                        <constraint firstItem="gKS-um-k10" firstAttribute="top" secondItem="QgW-Sk-goE" secondAttribute="bottom" constant="5" id="w7j-DK-FkP"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9c4-Xu-ITN" id="jc2-e6-I2G"/>
+                            <outlet property="delegate" destination="9c4-Xu-ITN" id="Jq9-pJ-6hx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Game Log" id="Gzs-ow-fSM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K83-7N-Cj5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1288.4057971014495" y="320.75892857142856"/>
         </scene>
         <!--New Game-->
         <scene sceneID="gGz-Wn-7yc">
@@ -642,7 +721,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RQO-FQ-WhL">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeamItem" id="RQO-FQ-WhL">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RQO-FQ-WhL" id="TT2-f9-oQX">

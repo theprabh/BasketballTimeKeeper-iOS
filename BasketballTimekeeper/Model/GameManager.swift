@@ -24,12 +24,12 @@ class GameManager: NSObject {
         self.games = realm.objects(Game.self)
         super.init()
     }
-    
+                   
 }
 
 class Game: Object {
-    let team1 = Team()
-    let team2 = Team()
+    @objc dynamic var team1Name = String()
+    @objc dynamic var team2Name = String()
     @objc dynamic var date = String()
     @objc dynamic var team1Score = Int()
     @objc dynamic var team2Score = Int()

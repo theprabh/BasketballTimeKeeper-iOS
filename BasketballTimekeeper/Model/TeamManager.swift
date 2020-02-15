@@ -22,7 +22,7 @@ class TeamManager: NSObject {
 }
 
 class Team: Object {
-    let players = List<Player>()
+    //let players = List<Player>()
     @objc dynamic var name = ""
 }
 
